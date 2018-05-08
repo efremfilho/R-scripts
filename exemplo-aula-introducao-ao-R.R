@@ -1,6 +1,7 @@
 # Explicação em https://go.efrem.io/intro-R-ceuma
 # Arquivo cores.txt - https://github.com/efremfilho/R-scripts/blob/master/cores.txt
 # Arquivo pessoas.csv - https://raw.githubusercontent.com/efremfilho/R-scripts/master/pessoas.csv
+# Arquivo pessoas-e-funcoes.xlsx - https://github.com/efremfilho/R-scripts/blob/master/pessoas-e-funcoes.xlsx
 
 version
 
