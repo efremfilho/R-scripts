@@ -1,5 +1,5 @@
 # Explicação em https://go.efrem.io/intro-R-ceuma
-
+# Arquivo cores.txt - https://github.com/efremfilho/R-scripts/blob/master/cores.txt
 version
 
 # Instalar o swirl, para quem quer aprender no seu ritmo (em inglês)
