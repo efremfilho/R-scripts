@@ -93,3 +93,49 @@ rep(c(0, 1, 2), each = 10)
     # código do R - https://drive.google.com/open?id=0B1mSgCRkGhd9ckVGQXk1NXRPSms
     # Base de dados - https://drive.google.com/open?id=0B1mSgCRkGhd9X0NPd1lZY1lHaUU
     # Slides - https://drive.google.com/open?id=0B1mSgCRkGhd9TE01UG1GU0JZUW8
+
+
+# Dia 2
+
+# Já aprendemos como criar um objeto e vetores, agora vamos ver matrizes e data.frame (baseado na Playlist da NMEC - FGV/IBRE)
+
+M <- matrix(1:6, 2, 3)
+M
+M[4]
+M[1,2]
+M[2,]
+M[,3]
+
+?data.frame
+tabela1 <- data.frame(Nome = c("André", "João"), Idade = c(25,45))
+tabela1
+tabela1[1]
+tabela1$Salário <- c(1200)
+tabela1 <- cbind(tabela1,data.frame(Casado = c(TRUE,FALSE)))
+tabela1
+?cbind
+tabela1 <- rbind(tabela1, data.frame(Nome = "Joana", Idade = "25", Salário = "4000", Casado = FALSE))
+ls()
+remove(z,y,x)
+
+# Manipulação de dados
+
+# Agora que já entendemos os data.frames podemos começar a manipular os dados
+
+cores <- read.table("cores.txt", header = TRUE)
+cores
+pessoas <-read.csv2("pessoas.csv")
+pessoas
+install.packages("xlsxjars") # Talvez vocês não precisem, acho que é por conta do linux
+install.packages("xlsx")
+require("xlsx")
+pessoas <- read.xlsx("pessoas-e-funcoes.xlsx", sheetIndex = 1)
+funcoes <- read.xlsx("pessoas-e-funcoes.xlsx", sheetName = "Funções")
+funcoes
+pessoas <- cbind(pessoas, funcoes[2])
+pessoas
+write.table(pessoas, "pessoas-completa.csv", sep = ";")
+write.xlsx(pessoas,"pessoas-completa.xlsx")
+pessoas$Função <- NULL
+
+# Medidas de centralidade
