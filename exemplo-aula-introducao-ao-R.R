@@ -4,6 +4,13 @@ version
 install.packages("swirl")
 library(swirl)
 install_course("R Programming")
+swirl::install_course("Exploratory Data Analysis")
+swirl::install_course("Regression Models")
+swirl::install_course("Advanced R Programming")
+swirl::install_course("Statistical Inference")
+swirl::install_course("Getting and Cleaning Data")
+swirl::install_course_github('josersosa','Programando_en_R')  # en español
+swirl::install_course_github("ifunam", "programacion-estadistica-r") # en español
 swirl()
 
 #Manipulando workspace e arquivos
@@ -42,7 +49,7 @@ c <- a*b+2
 c
 t <- 2^2 
 t
-t <- c(1.1, 9, 3.14)
+t <- c(1.1, 9, "efrem")
 t
 1:20
 pi:10
@@ -75,6 +82,7 @@ seq_along(my_seq)
 rep(0, times = 40)
 rep(c(0,1,2), times = 10)
 test = rep(c(0,1,2), times = 10)
+test
 rep(c(0, 1, 2), each = 10)
 
 
