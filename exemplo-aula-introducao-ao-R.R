@@ -1,3 +1,5 @@
+# Explicação em https://go.efrem.io/intro-R-ceuma
+
 version
 
 # Instalar o swirl, para quem quer aprender no seu ritmo (em inglês)
