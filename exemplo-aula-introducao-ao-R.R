@@ -138,4 +138,45 @@ write.table(pessoas, "pessoas-completa.csv", sep = ";")
 write.xlsx(pessoas,"pessoas-completa.xlsx")
 pessoas$Função <- NULL
 
-# Medidas de centralidade
+# Medidas de tendência central (média, moda, mediana, máximo, mínimo, quartis)
+mean(my_div)
+?append()
+my_div <- append(my_div, 0:1, after = 2)
+my_div <- append(my_div, NA)
+mean(my_div, na.rm = TRUE)
+my_div <- sort(my_div)
+median(my_div)
+x <- c("A", "B", "C", "C", "A","A")
+?table
+tabela_frequencia_x <- table(x)
+tabela_frequencia_x
+dados <- round(runif(1000,10,500))
+dados <- table(dados)
+?runif
+max(dados) # moda
+dados == max(dados)
+dados [dados == max(dados)]
+
+# Medidas de dispersão (variância, desvio padrão, coeficiente de variação, quantis e assimetria)
+var(dados)
+sd(dados)
+my_div <- append(my_div, NA)
+var(my_div, na.rm = TRUE)
+sd(my_div, na.rm = TRUE)
+cv <- function(x){coef<- sd(x)/mean(x)*100 # cria uma nova função
+        return(coef)
+      }
+cv(dados)
+cv(my_div)
+cv(my_seq)
+POF_capitais <- read.csv2("~/timeseries/cap1-R-primeiros-passos/POF_capitais.csv", header=FALSE)
+quantile(POF_capitais[,31], probs = 0.5)
+median(POF_capitais[,31])
+quantile(POF_capitais[,31], probs = c(0.1,.25, .36))
+install.packages("moments")
+require("moments")
+skewness(POF_capitais[,31])
+
+# Gráficos
+hist(POF_capitais[,31])
+
