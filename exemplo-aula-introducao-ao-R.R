@@ -2,6 +2,7 @@
 # Arquivo cores.txt - https://github.com/efremfilho/R-scripts/blob/master/cores.txt
 # Arquivo pessoas.csv - https://raw.githubusercontent.com/efremfilho/R-scripts/master/pessoas.csv
 # Arquivo pessoas-e-funcoes.xlsx - https://github.com/efremfilho/R-scripts/blob/master/pessoas-e-funcoes.xlsx
+# Arquivo POF_capitais.csv - https://raw.githubusercontent.com/efremfilho/R-scripts/master/POF_capitais.csv
 
 version
 
