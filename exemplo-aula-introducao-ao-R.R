@@ -179,4 +179,17 @@ skewness(POF_capitais[,31])
 
 # Gráficos
 hist(POF_capitais[,31])
-
+hist(POF_capitais[,31], main="Renda das famílias", col=2, border=1,xlab="", ylab="frequência")
+renda_menor <- subset(POF_capitais[,31], POF_capitais[,31]<10000)
+hist(renda_menor)
+names(POF_capitais)
+hist(POF_capitais$V31)
+boxplot(renda_menor,col="cyan", border = 2, ylab = "renda", main = "Renda menor que 10 mil")
+pie(table(POF_capitais[,18]), main = "Água encanada", labels = c("com", "sem"), col = c(4,2))
+legend("topright", fill = c(4,2), legend = c("com", "sem"))
+install.packages("UsingR")
+require("UsingR")
+grades
+par(mfrow=c(2:1))
+barplot(table(grades$prev), col = topo.colors(9))
+barplot(table(grades$grade), col = topo.colors(9))
