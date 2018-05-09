@@ -102,12 +102,14 @@ rep(c(0, 1, 2), each = 10)
 # Dia 2
 
 # Já aprendemos como criar um objeto e vetores, agora vamos ver matrizes e data.frame (baseado na Playlist da NMEC - FGV/IBRE)
-
-M <- matrix(1:6, 2, 3)
+x = 1:20
+M <- matrix(x, 4, 5)
 M
 M[4]
+M[4] = 100
 M[1,2]
-M[2,]
+y <- M[2,]
+y[2] = 3
 M[,3]
 
 ?data.frame
@@ -116,9 +118,9 @@ tabela1
 tabela1[1]
 tabela1$Salário <- c(1200)
 tabela1 <- cbind(tabela1,data.frame(Casado = c(TRUE,FALSE)))
-tabela1
 ?cbind
 tabela1 <- rbind(tabela1, data.frame(Nome = "Joana", Idade = "25", Salário = "4000", Casado = FALSE))
+tabela1 <- tabela1[-2,]
 ls()
 remove(z,y,x)
 
@@ -133,8 +135,8 @@ pessoas
 install.packages("xlsxjars") # Talvez vocês não precisem, acho que é por conta do linux
 install.packages("xlsx")
 require("xlsx")
-pessoas <- read.xlsx("pessoas-e-funcoes.xlsx", sheetIndex = 1)
-funcoes <- read.xlsx("pessoas-e-funcoes.xlsx", sheetName = "Funções")
+pessoas <- read.xlsx("~/gits/R-scripts/pessoas-e-funcoes.xlsx", sheetIndex = 1)
+funcoes <- read.xlsx("~/gits/R-scripts/pessoas-e-funcoes.xlsx", sheetName = "Funções")
 funcoes
 pessoas <- cbind(pessoas, funcoes[2])
 pessoas
@@ -143,6 +145,7 @@ write.xlsx(pessoas,"pessoas-completa.xlsx")
 pessoas$Função <- NULL
 
 # Medidas de tendência central (média, moda, mediana, máximo, mínimo, quartis)
+my_div <- pi:31
 mean(my_div)
 ?append()
 my_div <- append(my_div, 0:1, after = 2)
@@ -173,13 +176,14 @@ cv <- function(x){coef<- sd(x)/mean(x)*100 # cria uma nova função
 cv(dados)
 cv(my_div)
 cv(my_seq)
-POF_capitais <- read.csv2("~/timeseries/cap1-R-primeiros-passos/POF_capitais.csv", header=FALSE)
+POF_capitais <- read.csv2("~/gits/R-scripts/POF_capitais.csv", header=FALSE)
 quantile(POF_capitais[,31], probs = 0.5)
 median(POF_capitais[,31])
 quantile(POF_capitais[,31], probs = c(0.1,.25, .36))
 install.packages("moments")
 require("moments")
 skewness(POF_capitais[,31])
+kurtosis(POF_capitais[,31])
 
 # Gráficos
 hist(POF_capitais[,31])
@@ -194,6 +198,6 @@ legend("topright", fill = c(4,2), legend = c("com", "sem"))
 install.packages("UsingR")
 require("UsingR")
 grades
-par(mfrow=c(2:1))
+par(mfrow=c(2:1)) 
 barplot(table(grades$prev), col = topo.colors(9))
 barplot(table(grades$grade), col = topo.colors(9))
